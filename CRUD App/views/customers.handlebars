@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>View Customers</h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Customer ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each results}}
+            <tr>
+                <td scope="row">{{this.customer_id}}</td>
+                <td>{{this.first_name}}</td>
+                <td>{{this.last_name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.address_id}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<!-- Form -->
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Insert Customer</h1>
+    </div>
+</div>
+<form method='GET' action='/customers'>
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" class="form-control" id="first_name" aria-describedby="First Name"
+            placeholder="Enter first name" name="first_name">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control" id="last_name" aria-describedby="Last Name"
+            placeholder="Enter last name" name="last_name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="Email" placeholder="Enter email"
+            name="email">
+    </div>
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="number" class="form-control" id="phone_number" aria-describedby="Phone Number"
+            placeholder="Enter phone number" name="phone">
+    </div>
+    <div class="form-group">
+        <label for="address">Select Address</label>
+        <select class="form-control" id="address" name="address">
+            <option>null</option>
+            {{#each addresses}}
+            <option>{{this.address_id}} - {{this.street}} {{this.city}} {{this.state}} {{this.zip}}</option
+                value="{{this.address_id}}">
+            {{/each}}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" id="button">Submit</button>
+</form>

@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>View Orders</h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Order ID</th>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each results}}
+            <tr>
+                <td>{{this.order_id}}</td>
+                <td>{{this.customer_id}}</td>
+                <td>{{this.total_cost}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<!-- Form -->
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Insert Order</h1>
+    </div>
+</div>
+<form method='GET' action='/orders'>
+    <div class="form-group">
+        <label for="customer">Select Customer</label>
+        <select class="form-control" id="customer" name="customer_id">
+            {{#each customers}}
+            <option>{{this.customer_id}} - {{this.first_name}} {{this.last_name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h4>Select Plants</h4>
+        </div>
+    </div>
+    {{#each plants}}
+    <div class="form-group">
+        <label for="plant_1">{{this.genus}} {{this.variety}}</label>
+        <select class="form-control" id="plant_1" name="{{this.plant_id}}">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    {{/each}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

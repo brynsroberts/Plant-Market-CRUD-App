@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>View Plants</h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Plant ID</th>
+                <th scope="col">Genus</th>
+                <th scope="col">Variety</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each results}}
+            <tr>
+                <td>{{this.plant_id}}</td>
+                <td>{{this.genus}}</td>
+                <td>{{this.variety}}</td>
+                <td>{{this.cost}}</td>
+                <td>{{this.stock}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<!-- Form -->
+<div class="row justify-content-center">
+    <h1>Insert Plant</h1>
+</div>
+<form method='GET' action='/plants'>
+    <div class="form-group">
+        <label for="plantGenus">Genus</label>
+        <input type="text" class="form-control" id="plantGenus" aria-describedby="Genus" placeholder="Enter genus" name="genus">
+    </div>
+    <div class="form-group">
+        <label for="plantVariety">Variety</label>
+        <input type="text" class="form-control" id="plantGenus" aria-describedby="Genus" placeholder="Enter variety" name="variety">
+    </div>
+    <div class="form-group">
+        <label for="plantCost">Cost</label>
+        <input type="number" step="any" class="form-control" id="plantCost" aria-describedby="Cost"
+            placeholder="Enter cost" name="cost">
+    </div>
+    <div class="form-group">
+        <label for="plantStock">Stock</label>
+        <input type="number" class="form-control" id="plantStock" aria-describedby="Stock" placeholder="Enter stock" name="stock">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

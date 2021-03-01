@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Search Customers Orders</h1>
+    </div>
+</div>
+<form method='GET' id="searchcustomerformid">
+    <div class="form-group">
+        <label for="customer">Select Customer</label>
+        <select class="form-control" name="customers" id="customers">
+        {{#each customers}}
+            <option>{{this}}</option>
+        {{/each}}
+        </select>
+    </div>
+    <button id="searchcustomerordersubmitid">Submit</button>
+</form>

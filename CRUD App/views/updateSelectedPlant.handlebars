@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Update Plants</h1>
+    </div>
+</div>
+<form method='GET' id="updateselectedplantform">
+    <div class="form-group">
+        <label for="plantGenus">Genus</label>
+        <input type="text" class="form-control" id="plantGenus" aria-describedby="Genus"
+            placeholder="Selected genus for update" name="genus">
+    </div>
+    <div class="form-group">
+        <label for="plantVariety">Variety</label>
+        <input type="text" class="form-control" id="plantGenus" aria-describedby="Variety"
+            placeholder="Selected variety for update" name="variety">
+    </div>
+    <div class="form-group">
+        <label for="plantCost">Cost</label>
+        <input type="number" step="any" class="form-control" id="plantCost" aria-describedby="Cost"
+            placeholder="Selected cost for update" name="cost">
+    </div>
+    <div class="form-group">
+        <label for="plantStock">Stock</label>
+        <input type="number" class="form-control" id="plantStock" aria-describedby="Stock"
+            placeholder="Selected stock for update" name="stock">
+    </div>
+    <button id="updateselectedplantsubmitid">Submit</button>
+</form>
